@@ -8,6 +8,13 @@ can be namespaced using periods. Only `lowercase` characters are accepted.
 firebase functions:config:set someservice.key="THE API KEY" someservice.id="THE CLIENT ID"
 ```
 
+#### 🚚 Unsetting environmental variables
+To unset an `environmental variable`, use :
+```bash
+firebase functions:config:unset config.key
+```
+
+
 ### 🤖 Retrieve current config
 To see the `environmental variables` currently set for your project, use `firebase functions:config:get`. The output in JSON format
 ```js
@@ -41,3 +48,4 @@ exports.userCreated = functions.firestore.document("/user/{id}").onCreate((snap,
 ```bash
 firebase deploy --only functions
 ```
+
