@@ -35,3 +35,9 @@ exports.userCreated = functions.firestore.document("/user/{id}").onCreate((snap,
     });
 });
 ```
+
+#### 🌮 Deploy environmental variables
+`Firebase functions` are deployed together with environmental variables
+```bash
+firebase deploy --only functions
+```
