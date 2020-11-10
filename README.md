@@ -18,3 +18,20 @@ To see the `environmental variables` currently set for your project, use `fireba
   }
 }
 ```
+
+#### 🏠 Accessing environmental variables at runtime
+You can use `functions.config()` to retrieve an environmental variable
+
+```js
+const functions = require('firebase-functions');
+const request = require('request-promise');
+
+exports.userCreated = functions.firestore.document("/user/{id}").onCreate((snap, context) => {
+    return request({ 
+        url: "https://someserver.com/api/xxx/",
+        headers: {
+            Authorization: "Bearer ${functions.config().someservice.key}"
+        }
+    });
+});
+```
