@@ -43,6 +43,13 @@ exports.userCreated = functions.firestore.document("/user/{id}").onCreate((snap,
 });
 ```
 
+#### 💼 Importing environmental variables into current project
+Sometimes you mistakenly delete `environmental variables` used when your `functions` are run locally. Run 
+the command below in your `functions` directory.
+```bash
+firebase functions:config:get > .runtimeconfig.json
+```
+
 #### 🌮 Deploy environmental variables
 `Firebase functions` are deployed together with environmental variables
 ```bash
